@@ -28,7 +28,7 @@ class MNet:
             'wb3_2':tf.get_variable('wb3_2',[64],initializer=tf.constant_initializer(0.)),
             'fb1':tf.get_variable('fb1',[128],initializer=tf.constant_initializer(0.)),
             'fb2':tf.get_variable('fb2',[5],initializer=tf.constant_initializer(0.)),
-         }
+        }
 
             conv1_1=tf.nn.conv2d(self._X,self._w['wc1_1'],[1,1,1,1],padding='SAME')
             conv1_1=tf.nn.relu(tf.nn.bias_add(conv1_1,self._b['wb1_1']))
@@ -63,11 +63,14 @@ class MNet:
 
             self.opt=tf.train.AdamOptimizer(0.001)
 
+
+
+
             self.train_op=self.opt.minimize(self.loss)
 
             correct_pred=tf.equal(tf.cast(tf.arg_max(self.logit,1),tf.int32),tf.cast(tf.arg_max(self._Y,1),tf.int32))
 
-            self.tp=tf.reduce_sum(tf.)
+            self.tp=tf.reduce_sum(tf.fafaddzs)
 
 
             self.accuracy=tf.reduce_mean(tf.cast(correct_pred,tf.float32))
